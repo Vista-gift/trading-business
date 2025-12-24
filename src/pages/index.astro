@@ -1,5 +1,5 @@
 ---
-import { Container, FeatureCard } from '@components/odyssey-theme';
+import { Container, FeatureCard } from '@components/Odyssey-theme';
 
 import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
@@ -9,10 +9,10 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	<HomeHeroSection />
 	<Container>
 		<section class="feature-card__section">
-			<h2>Landing Pages</h2>
+			<h2>Product display</h2>
 			<p>
-				Use one of our landing pages to jumpstart your website or
-				ad campaign.
+				We offer good quality products, nice packing with customization
+				.
 			</p>
 			<div class="feature-card__grid">
 				<FeatureCard href="/landing-pages/landing-1" title="Landing Page 1" imgSrc="/assets/images/home/screenshots/landing-1">
@@ -43,37 +43,11 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
           imgSrc="/assets/images/home/screenshots/blog-post"
 				>
 				</FeatureCard>
-				<FeatureCard
-					href="/company/legal"
-					imgSrc="/assets/images/home/screenshots/legal"
-					title="Legal Page"
-				>
-				</FeatureCard>
-			</div>
+							</div>
 		</section>
 	</Container>
 
-	<Container>
-		<section class="feature-card__section">
-			<h2>Theme Pages</h2>
-			<p>Learn more about how to set up and use the Odyssey Theme.</p>
-			<div class="feature-card__grid">
-				<FeatureCard
-					href="/theme/get-started"
-					imgSrc="/assets/images/home/screenshots/get-started"
-					title="Get Started"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/theme/style-guide"
-					imgSrc="/assets/images/home/screenshots/style-guide"
-					title="Style Guide"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
-</Layout>
+	</Layout>
 
 <style>
 	.feature-card__section {
