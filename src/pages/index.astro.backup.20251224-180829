@@ -1,0 +1,57 @@
+---
+
+	 import Layout from '../layouts/Page.astro';
+import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+import Container from '../components/core/Container.astro';
+import FeatureCard from '../components/cards/FeatureCard.astro';
+---
+<Layout>
+  <HomeHeroSection />
+    
+    <section class="section">
+        <div class="container">
+            <h2>Product display</h2>
+            <p>
+                We offer good quality products, nice packing with customization.
+            </p>
+            <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <a href="/landing-pages/landing-1" style="display: block; border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; text-decoration: none; color: inherit;">
+                    <img src="/assets/images/home/screenshots/landing-1" alt="Landing Page 1" style="width: 100%; height: auto; display: block;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="margin: 0;">Landing Page 1</h3>
+                    </div>
+                </a>
+                <a href="/landing-pages/landing-2" style="display: block; border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; text-decoration: none; color: inherit;">
+                    <img src="/assets/images/home/screenshots/landing-2" alt="Landing Page 2" style="width: 100%; height: auto; display: block;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="margin: 0;">Landing Page 2</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <Container>
+        <section class="feature-card section">
+            <h2>Company Pages</h2>
+            <p>
+                Use one of our prebuilt company pages for your about page, contact page,
+                legal pages, blog posts, etc.
+            </p>
+            <div class="feature-card grid">
+                <FeatureCard href="/company/about" title="About Page" imgSrc="/assets/images/home/screenshots/about">
+                </FeatureCard>
+                <FeatureCard href="/company/contact" title="Contact Page" imgSrc="/assets/images/home/screenshots/contact">
+                </FeatureCard>
+                <FeatureCard href="/blog/" title="Blog Page" imgSrc="/assets/images/home/screenshots/blog">
+                </FeatureCard>
+                <FeatureCard
+                    href="/blog/posts/remote-work-mental-health"
+                    title="Blog Post"
+                    imgSrc="/assets/images/home/screenshots/blog-post">
+                </FeatureCard>
+            </div>
+        </section>
+    </Container>
+    
+</Layout>

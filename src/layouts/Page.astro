@@ -26,15 +26,44 @@ const { seo } = Astro.props as Props;
 	<div id="page">
 		<slot />
 	</div>
-	<Footer
-		slot="footer"
-		background="var(--theme-surface-1)"
-		color="var(--theme-on-surface-1)"
-		footerLists={footerLists}
-    footerSocials={footerSocials}
-		copyrightName={settings.name}
-    showPlug={settings.showPlug}
-	>
-		<Logo slot="logo" />
-	</Footer>
+	<footer 
+    slot="footer"
+    style="
+        background: var(--theme-surface-1); 
+        color: var(--theme-on-surface-1); 
+        padding: 3rem 0; 
+        margin-top: 4rem;
+        border-top: 1px solid var(--theme-border);
+    "
+>
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem; text-align: center;">
+            
+            <!-- Logo 和版权 -->
+            <div>
+                <Logo />
+                <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.875rem;">
+                    © 2024 {settings.name}. All rights reserved.
+                </p>
+            </div>
+            
+            <!-- 导航链接 -->
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="/company/about" style="color: inherit; text-decoration: none; opacity: 0.8; transition: opacity 0.2s;">About</a>
+                <a href="/company/contact" style="color: inherit; text-decoration: none; opacity: 0.8; transition: opacity 0.2s;">Contact</a>
+                <a href="/company/legal" style="color: inherit; text-decoration: none; opacity: 0.8; transition: opacity 0.2s;">Legal</a>
+                <a href="/blog" style="color: inherit; text-decoration: none; opacity: 0.8; transition: opacity 0.2s;">Blog</a>
+                <a href="/theme/get-started" style="color: inherit; text-decoration: none; opacity: 0.8; transition: opacity 0.2s;">Get Started</a>
+            </div>
+            
+            <!-- 社交图标（可选，如果需要） -->
+            <!-- <div style="display: flex; justify-content: center; gap: 1rem;">
+                <a href="#" style="color: inherit; opacity: 0.7;">Twitter</a>
+                <a href="#" style="color: inherit; opacity: 0.7;">GitHub</a>
+                <a href="#" style="color: inherit; opacity: 0.7;">LinkedIn</a>
+            </div> -->
+            
+        </div>
+    </div>
+</footer>
 </Layout>

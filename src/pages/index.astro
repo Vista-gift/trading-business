@@ -1,57 +1,72 @@
 ﻿---
-
-	 import Layout from '../layouts/Page.astro';
+import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 import Container from '../components/core/Container.astro';
 import FeatureCard from '../components/cards/FeatureCard.astro';
 ---
+
 <Layout>
   <HomeHeroSection />
     
-    <section class="section">
-        <div class="container">
-            <h2>Product display</h2>
-            <p>
-                We offer good quality products, nice packing with customization.
-            </p>
-            <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-                <a href="/landing-pages/landing-1" style="display: block; border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; text-decoration: none; color: inherit;">
-                    <img src="/assets/images/home/screenshots/landing-1.webp" alt="Landing Page 1" style="width: 100%; height: auto; display: block;">
-                    <div style="padding: 1.5rem;">
-                        <h3 style="margin: 0;">Landing Page 1</h3>
-                    </div>
-                </a>
-                <a href="/landing-pages/landing-2" style="display: block; border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; text-decoration: none; color: inherit;">
-                    <img src="/assets/images/home/screenshots/landing-2.webp" alt="Landing Page 2" style="width: 100%; height: auto; display: block;">
-                    <div style="padding: 1.5rem;">
-                        <h3 style="margin: 0;">Landing Page 2</h3>
-                    </div>
-                </a>
+  <!-- 产品展示区域 - 使用安全基础布局 -->
+  <section class="section">
+    <div class="container">
+      <h2>Product display</h2>
+      <p style="font-size: 1.125rem; margin-bottom: 3rem;">
+        We offer good quality products, nice packing with customization.
+      </p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        
+        <!-- 卡片 1 -->
+        <div style="border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; background: white;">
+          <a href="/landing-pages/landing-1" style="text-decoration: none; color: inherit; display: block;">
+            <div style="height: 200px; overflow: hidden; background-color: #f3f4f6; display: flex; align-items: center; justify-content: center; color: #9ca3af; font-weight: bold;">
+              产品展示图 1
             </div>
+            <div style="padding: 1.5rem;">
+              <div style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">产品案例一</div>
+              <div style="color: #6b7280; font-size: 0.875rem;">高品质产品包装与定制方案展示。</div>
+            </div>
+          </a>
         </div>
-    </section>
 
-    <Container>
-        <section class="feature-card section">
-            <h2>Company Pages</h2>
-            <p>
-                Use one of our prebuilt company pages for your about page, contact page,
-                legal pages, blog posts, etc.
-            </p>
-            <div class="feature-card grid">
-                <FeatureCard href="/company/about" title="About Page" imgSrc="/assets/images/home/screenshots/about">
-                </FeatureCard>
-                <FeatureCard href="/company/contact" title="Contact Page" imgSrc="/assets/images/home/screenshots/contact">
-                </FeatureCard>
-                <FeatureCard href="/blog/" title="Blog Page" imgSrc="/assets/images/home/screenshots/blog">
-                </FeatureCard>
-                <FeatureCard
-                    href="/blog/posts/remote-work-mental-health"
-                    title="Blog Post"
-                    imgSrc="/assets/images/home/screenshots/blog-post">
-                </FeatureCard>
+        <!-- 卡片 2 -->
+        <div style="border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; background: white;">
+          <a href="/landing-pages/landing-2" style="text-decoration: none; color: inherit; display: block;">
+            <div style="height: 200px; overflow: hidden; background-color: #f3f4f6; display: flex; align-items: center; justify-content: center; color: #9ca3af; font-weight: bold;">
+              产品展示图 2
             </div>
-        </section>
-    </Container>
-    
+            <div style="padding: 1.5rem;">
+              <div style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">产品案例二</div>
+              <div style="color: #6b7280; font-size: 0.875rem;">另一款产品的优质包装与定制服务示例。</div>
+            </div>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 公司页面区域 -->
+  <Container>
+    <section class="feature-card section">
+      <h2>Company Pages</h2>
+      <p>
+        Use one of our prebuilt company pages for your about page, contact page,
+        legal pages, blog posts, etc.
+      </p>
+      <div class="feature-card grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+        <!-- 注意：这里暂时移除图片路径中的错误扩展名，先保证布局 -->
+        <FeatureCard href="/company/about" title="关于我们" />
+        <FeatureCard href="/company/contact" title="联系我们" />
+        <FeatureCard href="/blog/" title="博客首页" />
+        <FeatureCard
+          href="/blog/posts/remote-work-mental-health"
+          title="博客文章示例"
+        />
+      </div>
+    </section>
+  </Container>
+  
 </Layout>
