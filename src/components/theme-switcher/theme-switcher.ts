@@ -106,26 +106,41 @@ export class ThemeSwitcher extends LitElement {
   }
 
 	private _setTheme(theme) {
-		this._doc.setAttribute('data-theme', theme);
+    console.log('设置主题:', theme); // 调试信息1
+    
+    this._doc.setAttribute('data-theme', theme);
 
     const _heroImage = document.querySelector('#home-hero-image') as HTMLImageElement;
-		if (theme === 'default') {
-			_heroImage.src = '/assets/images/home/classic-hero.jpg';
-		}
-		if (theme === 'dark') {
-			_heroImage.src = '/assets/images/home/dark-hero.jpg';
-		}
-		if (theme === 'earth') {
-			_heroImage.src = '/assets/images/home/earth-hero.jpg';
-		}
-		if (theme === 'ocean') {
-			_heroImage.src = '/assets/images/home/ocean-hero.jpg';
-		}
-		if (theme === 'sand') {
-			_heroImage.src = '/assets/images/home/sand-hero.jpg';
-		}
-		localStorage.setItem('theme', theme);
-		this.theme = theme;
+    console.log('找到图片元素:', _heroImage); // 调试信息2
+    
+    if (!_heroImage) {
+      console.error('没找到图片元素！');
+      return;
+    }
+    
+    let imagePath = '';
+    if (theme === 'default') {
+      imagePath = '/images/themes/classic.jpg';
+    }
+    if (theme === 'dark') {
+      imagePath = '/images/themes/dark.jpg';
+    }
+    if (theme === 'earth') {
+      imagePath = '/images/themes/earth.jpg';
+    }
+    if (theme === 'ocean') {
+      imagePath = '/images/themes/ocean.jpg';
+    }
+    if (theme === 'sand') {
+      imagePath = '/images/themes/sand.jpg';
+    }
+    
+    console.log('设置图片路径:', imagePath); // 调试信息3
+    _heroImage.src = imagePath;
+    console.log('图片已更新'); // 调试信息4
+    
+    localStorage.setItem('theme', theme);
+    this.theme = theme;
 	}
 
 	render() {

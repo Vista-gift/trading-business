@@ -8,7 +8,7 @@ import FeatureCard from '../components/cards/FeatureCard.astro';
 <Layout>
   <HomeHeroSection />
     
-  <!-- 产品展示区域 - 使用安全基础布局 -->
+  <!-- 产品展示区域 -->
   <section class="section">
     <div class="container">
       <h2>Product display</h2>
@@ -57,7 +57,6 @@ import FeatureCard from '../components/cards/FeatureCard.astro';
         legal pages, blog posts, etc.
       </p>
       <div class="feature-card grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
-        <!-- 注意：这里暂时移除图片路径中的错误扩展名，先保证布局 -->
         <FeatureCard href="/company/about" title="关于我们" />
         <FeatureCard href="/company/contact" title="联系我们" />
         <FeatureCard href="/blog/" title="博客首页" />
